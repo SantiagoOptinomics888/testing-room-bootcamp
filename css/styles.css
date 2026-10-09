@@ -1,5 +1,53 @@
 /* Testing Room Academy — Bootcamp #6 landing */
 
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: url("../assets/fonts/HelveticaNowDisplay-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: url("../assets/fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: url("../assets/fonts/HelveticaNowDisplay-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euro Technic Extended";
+  src: url("../assets/fonts/EuroTechnicExtended-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euro Technic Extended";
+  src: url("../assets/fonts/EuroTechnicExtended-Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mistral";
+  src: url("../assets/fonts/Mistral.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #121212;
   --bg-deep: #0a0a0a;
@@ -13,9 +61,9 @@
   --panel: #cf1b17;
   --panel-line: rgba(255, 255, 255, 0.32);
 
-  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-wide: "Michroma", "Eurostile Extended", "Arial Black", sans-serif;
-  --font-script: "Mr Dafoe", "Brush Script MT", cursive;
+  --font-sans: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-wide: "Euro Technic Extended", "Eurostile Extended", "Arial Black", sans-serif;
+  --font-script: "Mistral", "Brush Script MT", cursive;
   --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --gutter: 20px;
@@ -54,6 +102,7 @@ body {
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -68,13 +117,6 @@ body::after {
   opacity: 0.16;
   mix-blend-mode: overlay;
   pointer-events: none;
-}
-
-/* Michroma ships a single light weight; thicken it towards the key visual's bold cut */
-.hero__title,
-.logo__mark,
-.footer__wordmark {
-  -webkit-text-stroke: 0.022em currentColor;
 }
 
 .script {
@@ -154,9 +196,9 @@ svg {
 
 .heading {
   font-size: clamp(2.5rem, 7.2vw, 5.25rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.9;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--fg);
 }
@@ -178,9 +220,9 @@ svg {
 
 .display {
   font-size: clamp(1.75rem, 3.6vw, 3.25rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.02;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--off-white);
   text-wrap: balance;
@@ -436,9 +478,9 @@ svg {
   gap: 16px;
   padding: 6px 0;
   font-size: clamp(2rem, 7vw, 4.5rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--muted);
   transition: color 0.3s;
@@ -506,8 +548,8 @@ svg {
 
 .hero__title {
   font-family: var(--font-wide);
-  font-size: clamp(1.7rem, 8.2vw, 15.5vh);
-  font-weight: 400;
+  font-size: min(calc((100vw - 2 * var(--gutter)) / 11.45), 16vh);
+  font-weight: 700;
   line-height: 1.04;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -551,7 +593,7 @@ svg {
   font-size: clamp(1.5rem, 3.4vw, 3rem);
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
 }
 
@@ -666,8 +708,8 @@ svg {
 
 .intro__strong {
   font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--off-white);
 }
@@ -745,9 +787,9 @@ svg {
   top: 6%;
   right: 6%;
   font-size: clamp(4rem, 9vw, 8rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.8;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
 }
@@ -809,9 +851,9 @@ svg {
 
 .card__title {
   font-size: clamp(1.25rem, 1.7vw, 1.5rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--off-white);
   text-wrap: balance;
@@ -1016,9 +1058,9 @@ svg {
 
 .banner__title {
   font-size: clamp(2.25rem, 6.4vw, 5.25rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.92;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--off-white);
   text-wrap: balance;
@@ -1120,9 +1162,9 @@ svg {
   flex-wrap: wrap;
   gap: 0 0.55em;
   font-size: clamp(1.5rem, 4.4vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -1159,7 +1201,7 @@ svg {
   font-size: clamp(1.125rem, 2.3vw, 2rem);
   font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.005em;
   color: var(--fg);
   transition: color 0.3s, padding-left 0.4s var(--ease);
 }
@@ -1191,9 +1233,9 @@ svg {
 }
 
 .aside-note p:first-child {
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   color: var(--off-white);
 }
 
@@ -1306,9 +1348,9 @@ svg {
 
 .facts dd {
   font-size: clamp(1.25rem, 2vw, 1.75rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.005em;
   text-transform: uppercase;
   color: var(--off-white);
 }
@@ -1408,9 +1450,9 @@ svg {
 
 .price__amount {
   font-size: clamp(2.75rem, 6vw, 4.5rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.95;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.015em;
 }
 
 .price__amount span {
@@ -1485,9 +1527,9 @@ svg {
 .closing__title {
   max-width: 14ch;
   font-size: clamp(2.75rem, 10vw, 9rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.88;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.012em;
   text-transform: uppercase;
   color: var(--fg);
 }
@@ -1508,7 +1550,7 @@ svg {
 }
 
 .closing__strong {
-  font-weight: 700;
+  font-weight: 800;
   color: var(--off-white);
 }
 
@@ -1523,9 +1565,9 @@ svg {
 
 .ticket__title {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--off-white);
 }
@@ -1589,7 +1631,7 @@ svg {
 
 .footer__h {
   margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
   text-transform: uppercase;
   color: var(--fg);
@@ -1626,8 +1668,8 @@ svg {
 .footer__wordmark {
   margin: 72px 0 0;
   font-family: var(--font-wide);
-  font-size: 8.3vw;
-  font-weight: 400;
+  font-size: calc((100vw - 2 * var(--gutter)) / 12.1);
+  font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
